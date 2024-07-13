@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Dominos</title>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width,initial-scale=1.0">
+        <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+        <script src = "payments.js" defer></script>
+        <script src="controller.js" defer type="module"></script>
+        <link rel="stylesheet" href="style.css">
+    </head>
+
+    <body>
+        <header>
+            <div class="header1 flex">
+                <div class="menu">
+                    <button  onclick="opensubmenu()">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="38" height="25" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-align-justify"><line x1="3" x2="25" y1="10" y2="10"/><line x1="3" x2="25" y1="16" y2="16"/><line x1="3" x2="25" y1="22" y2="22"/></svg>
+                    </button>
+                
+                <div class="submenu-esc flex">
+                    <button  onclick="closesubmenu()">
+                        <span>ecs</span>
+                        <img src="https://pizzaonline.dominos.co.in/static/assets/icons/location_close_icon.svg" alt="">
+                    </button>
+                </div>
+                
+                <div class="submenu">
+                   <img src="" alt=""> <a href="#">TRACK CURRENT ORDER</a>
+                   <img src="" alt=""> <a href="#">Order History</a>
+                   <img src="" alt=""> <a href="#">Home</a>
+                   <img src="" alt=""> <a href="#">Deals & Offers</a>
+                   <img src="" alt=""> <a href="#">Menu</a>
+                   <img src="" alt=""> <a href="#">Everyday Value Offers</a>
+                   <img src="" alt=""> <a href="#">Terms & Condition</a>
+                   <img src="" alt=""> <a href="#">Feedback</a>
+                   <img src="" alt=""> <a href="#">Bulk Order</a>
+                   
+                </div>
+                </div>
+                <div class="logo">
+                    <img src="https://pizzaonline.dominos.co.in/static/assets/logo_white.svg" alt="">
+                </div>
+            </div>
+            <div class="header2 flex">
+                <div class="delivery-pickup flex">
+                    <div class="radio1">
+                        <input name="myChoice" type="radio" onclick="SelectOnlyThis(this)" >
+                        <span>Delivery</span>
+                    </div>
+                    <div class="radio2">
+                        <input name="myChoice" type="radio" onclick="SelectOnlyThis(this)">
+                        <span>Pick Up/Dine-in</span>
+                    </div>
+                </div>
+                <div class="location">
+                    <input type="text" value="Prem Nagar,Najafgarh,Delhi" placeholder="Location">
+                </div>
+                <div class="myaccount flex">
+                    <button>
+                        <img src="https://pizzaonline.dominos.co.in/static/assets/avatar.svg" height=28 width=28>
+                        <div class="inneraccount">
+                            <span>My Account</span>
+                            <a class="login" href="login.html">Login</a>
+                            <a href="login.html">Signup</a>
+                        </div>
+                    </button>
+                </div>
+            </div>
+        </header> 
+        <section class="subheader flex">
+               <a href="" class="PizzaType1" >EVERYDAY VALUE</a>
+               <a href="" class="PizzaType2" >RECOMMENDED</a>
+               <a href="" class="PizzaType3" >NEW LAUNCHES</a>
+               <a href="" class="PizzaType4" >VEG PIZZA</a>
+               <a href="" class="PizzaType" >GOURMET PIZZA</a>
+               <a href="" class="PizzaType" >NON-VEG PIZZA</a>
+               <a href="" class="PizzaType" >BEVERAGES</a>
+               <a href="" class="PizzaType" >GARLIC BREADES & MORE</a>
+               <a href="" class="PizzaType" >PIZZA MANIA</a>
+               <a href="" class="PizzaType" >VALUE COMBOS</a>
+               <a href="" class="PizzaType" >DESSERTS</a>
+               <a href="" class="PizzaType" >CHEESE BURST PIZZA</a>
+               <a href="" class="PizzaType" >SPICY PIZZA</a>
+            
+        </section>
+        <main>
+        <div class="overlay"></div>
+
+        <div class="container">
+            <div class="grid-container">
+                <div class="pizzaside">
+
+                    <section id="recommended">
+                        <div class="line">
+                            <div class="recommend">
+                                <h1>Recommended</h1>
+                            </div>
+                        </div>
+                            <div class="row" id="Recommended">
+                                
+                            </div>
+                    </section>
+
+                    <section id="newlaunches">
+                        <div class="line">
+                            <div class="recommend">
+                                <h1>New Launches</h1>
+                            </div>
+                        </div>
+                            <div class="row" id="NewLaunches">
+
+                            </div>
+                    </section>
+
+                    <section id="vegpizza">
+                        <div class="line">
+                            <div class="recommend">
+                                <h1>Veg Pizza</h1>
+                            </div>
+                        </div>
+                            <div class="row" id="VegPizza">
+
+                                
+                                
+                            </div>
+                    </section>
+
+                    <section id="gourmeetpizza">
+                        <div class="line">
+                            <div class="recommend">
+                                <h1>Gourmet Pizza</h1>
+                            </div>
+                        </div>
+                            <div class="row" id="GourmetPizza">
+
+                                
+
+                            </div>
+                    </section>
+
+                    <section id="nonvegpizza">
+                        <div class="line">
+                            <div class="recommend">
+                                <h1>Non-Veg Pizza</h1>
+                            </div>
+                        </div>
+                            <div class="row" id="NonVegPizza">
+
+                                
+                            </div>
+                    </section>
+
+                    <section id="beverages">
+                        <div class="line">
+                            <div class="recommend">
+                                <h1>Beverages</h1>
+                            </div>
+                        </div>
+                            <div class="row" id="Beverages">
+
+                                
+
+                            </div>
+                    </section>
+
+                    <section id="garlicbread">
+                        <div class="line">
+                            <div class="recommend">
+                                <h1>Garlic Breads & More</h1>
+                            </div>
+                        </div>
+                            <div class="row" id="GarlicBread">
+
+                                
+
+                            </div>
+                    </section>
+
+                    <section id="pizzamania">
+                        <div class="line">
+                            <div class="recommend">
+                                <h1>Pizza Mania</h1>
+                            </div>
+                        </div>
+                            <div class="row" id="PizzaMania">
+
+                                 
+
+                            </div>
+                    </section>
+
+                    <section id="valuecombos">
+                        <div class="line">
+                            <div class="recommend">
+                                <h1>Value Combos</h1>
+                            </div>
+                        </div>
+                            <div class="row" id="ValueCombos">
+
+                                 
+
+                            </div>
+                    </section>
+
+                    <section id="desserts">
+                        <div class="line">
+                            <div class="recommend">
+                                <h1>Desserts</h1>
+                            </div>
+                        </div>
+                            <div class="row" id="Desserts">
+
+                                
+
+                            </div>
+                    </section>
+
+                    <section id="cheeseburstpizza">
+                        <div class="line">
+                            <div class="recommend">
+                                <h1>Cheese Burst Pizza</h1>
+                            </div>
+                        </div>
+                            <div class="row" id="CheeseBurstPizza">
+
+                                
+
+                            </div>
+                    </section>
+
+                    <section id="spicypizza">
+                        <div class="line">
+                            <div class="recommend">
+                                <h1>Spicy Pizza</h1>
+                            </div>
+                        </div>
+                            <div class="row" id="SpicyPizza">
+
+                                <div class="col">
+                                    <div class="card">
+                                        <div class="card-header">
+                                            <img  src="https://images.dominos.co.in/nextgen-catalog/media/prod/Dominos/menu/10ddf620-ae20-477f-b4b2-9bce1ded021d_BlazingOnionPaprikacartmenu.jpeg" alt="">
+                                            <!-- <svg  
+                                                width="30px"
+                                                height="30px"
+                                                viewBox="-1.28 -1.28 34.56 34.56"
+                                                version="1.1"
+                                                xmlns="http://www.w3.org/2000/svg"
+                                                xmlns:xlink="http://www.w3.org/1999/xlink"
+                                                xmlns:sketch="http://www.bohemiancoding.com/sketch/ns" 
+                                                fill="#000000" 
+                                                stroke="#000000" 
+                                                transform="rotate(0)">
+                                                <g 
+                                                    id="SVGRepo_bgCarrier" 
+                                                    stroke-width="0"></g>
+                                                <g id="SVGRepo_tracerCarrier" 
+                                                    stroke-linecap="round" 
+                                                    stroke-linejoin="round" 
+                                                    stroke="#000000" 
+                                                    stroke-width="0.192"></g>
+                                                <g id="SVGRepo_iconCarrier"> 
+                                                    <title>like</title> 
+                                                    <desc>Created with Sketch Beta.</desc> 
+                                                    <defs> </defs> 
+                                                <g id="Page-1" 
+                                                    stroke-width="1.408" 
+                                                    fill="none" 
+                                                    fill-rule="evenodd" 
+                                                    sketch:type="MSPage"> 
+                                                <g class= "filler"
+                                                    id="Icon-Set-Filled" 
+                                                    sketch:type="MSLayerGroup" 
+                                                    transform="translate(-102.000000, -882.000000)" 
+                                                    fill=""> <path d="M126,882 C122.667,882 119.982,883.842 117.969,886.235 C116.013,883.76 113.333,882 110,882 C105.306,882 102,886.036 102,890.438 C102,892.799 102.967,894.499 104.026,896.097 L116.459,911.003 C117.854,912.312 118.118,912.312 119.513,911.003 L131.974,896.097 C133.22,894.499 134,892.799 134,890.438 C134,886.036 130.694,882 126,882" id="heart-like" sketch:type="MSShapeGroup"> </path> </g> </g> </g></svg>                                            -->
+                                        </div>
+                                        <div class="card-content">
+                                            <h4>Blazing Onion & Paprika</h4>
+                                            <p>Hot & spicy pizza with onion & red paprika toppings and
+                                                a new spicy peri peri sauce on a Domino's cheesy base.
+                                            </p>
+                                        </div>
+                                        <div class="card-action">
+                                            <div class="flex">
+                                                <span>
+                                                    <label for="">Size</label>
+                                                    <div>
+                                                        <select name="" id="">
+                                                            <option value="Regular">Regular</option>
+                                                            <option value="Medium">Medium</option>
+                                                            <option value="Large">Large</option>
+                                                        </select>
+                                                    </div>
+                                                </span>
+                                                <span>
+                                                    <label for="">Crust</label>
+                                                    <div>
+                                                      <select name="" id="">
+                                                        <option value="New Hand Tossed">New Hand Tossed</option>
+                                                        <option value="100% Wheat Thin Crust">100% Wheat Thin Crust</option>
+                                                        <option value="Cheese Burst">Cheese Burst</option>
+                                                        <option value="Fresh Pan Pizza">Fresh Pan Pizza</option>
+                                                      </select>
+                                                    </div>
+                                                </span>
+                                            </div>  
+                                        </div>
+                                        <div class="card-cart">
+                                            <span>Rs/-00002</span>
+                                            <button>Add To Cart</button>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                    </section>
+
+                </div>
+
+
+                <div class="orderside">
+                    <div class="orderList" id="orderList">
+
+                        <!-- <div class="cart-item">
+                            <div class="pizza-detail">
+                                <div class="item-img">
+                                    <img src="https://images.dominos.co.in/nextgen-catalog/media/prod/Dominos/menu/10ddf620-ae20-477f-b4b2-9bce1ded021d_BlazingOnionPaprikacartmenu.jpeg" alt="">
+                                </div>
+                                <div class="item-details">
+                                    <h4>Blazing Onion & Paprika</h4>
+                                    <p>Hot & spicy pizza with onion & red paprika toppings and
+                                    a new spicy peri peri sauce on a Domino's cheesy base.</p>
+                                </div>
+                            </div>
+                            <div class="size-crust">
+                                <span>Regular</span>
+                                <span>|</span>
+                                <span>New Hand Tossed</span>
+                            </div>
+                            <div class="item-description">
+                                <div class="item-quantity">
+                                    <button class="Quantity_Changer">-</button>
+                                    <span class="Quantity">1</span>
+                                    <button class="Quantity_Changer">+</button>
+                                </div>
+                                <div class="item-price">
+                                    <span>Price</span>
+                                </div>
+                            </div>
+                        </div> -->
+
+                      <img class="emptyImg" src="https://pizzaonline.dominos.co.in/static/assets/empty_cart.png"alt=""/>
+                      <h2 class ='emptyTag1'>YOUR CART IS EMPTY</h2>
+                      <p class="emptyTag2">Please add some items from the menu.</p>
+                    </div>
+                    <div class="checkout">
+                        <div id="bill">
+
+                        </div>
+                        <div class="checkoutButton">
+                            <button id="rzp-button">Checkout</button>
+                        </div>
+                    </div>
+                  </div>
+            </div>
+        </div> 
+    </main> 
+
+    <script>
+
+        function opensubmenu() {
+            const blackoverlay=document.querySelector(".overlay") 
+            const submenu = document.querySelector(".submenu");
+            const submenuesc=document.querySelector(".submenu-esc");
+            blackoverlay.classList.toggle("active");
+            submenu.classList.toggle("active"); 
+            submenuesc.classList.toggle("active");
+        }
+        function closesubmenu(){
+            const blackoverlay=document.querySelector(".overlay") 
+            const submenu = document.querySelector(".submenu");
+            const submenuesc=document.querySelector(".submenu-esc");
+            blackoverlay.classList.remove("active");
+            submenu.classList.remove("active"); 
+            submenuesc.classList.remove("active");
+        }
+        function selectOnlyThis(id){
+            var myChoice = document.getElementsByName("myChoice");
+            Array.prototype.forEach.call(myChoice,function(el){el.checked = false;});
+            id.checked = true;
+        }
+        function activePage(){
+            const PizzaType=document.getElementsByClassName("PizzaType1");
+            PizzaType.classList.add("active-a");
+        }
+        
+
+    </script> 
+    </body>
+
+</html>
