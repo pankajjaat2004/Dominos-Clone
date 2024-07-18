@@ -19,26 +19,19 @@ async function loadPizzasJson(){
 
 var arr=['Recommended','NewLaunches','VegPizza','GourmetPizza','NonVegPizza','Beverages','GarlicBread','PizzaMania','ValueCombos','Desserts','CheeseBurstPizza','SpicyPizza'];
 
-// loadPizzasJson();
 
 function loadpizza(Pizzas){
 
-    cartOperations.pizzas = Pizzas;
-    console.log(cartOperations.pizzas);
-    // cartOperations.pizzas += Pizzas[arr[1]];
-
-
-    for(let i=0;i<arr.length;i++){
-        // console.log('Element ',i,'is- ',arr[i]);
-    
+    for(let i=0;i<arr.length;i++){    
 
         for(let j = 0 ; j<Pizzas[arr[i]].length; j++){
+
+            cartOperations.pizzas.push(Pizzas[arr[i]][j]);
 
             printPizza(Pizzas[arr[i]][j],arr[i]);
         }
     }    
 }
-
 function printPizza(pizza,location){
 
     
@@ -155,8 +148,6 @@ function printPizza(pizza,location){
     CardCartButton.innerText='Add To Cart';
     CardCartButton.setAttribute('pizza-id',pizza.id);
 
-    CardCartButton.setAttribute('location-id',location);
-
     CardCartButton.addEventListener('click', addToCart);
 
     CardCartDiv.appendChild(CardCartSpan);
@@ -178,9 +169,7 @@ function printPizza(pizza,location){
 function addToCart(){
     const pizzaId = this.getAttribute('pizza-id');
 
-    const locationId = this.getAttribute('location-id');
-
-    cartOperations.addInCart(pizzaId,locationId);
+    cartOperations.addInCart(pizzaId);
     
     printCart();
     printBill(); 
